@@ -1,0 +1,179 @@
+// ==========================================================================
+// Components / Forms
+// ==========================================================================
+
+input, label {
+	@include inline-block(baseline);
+	letter-spacing: .02em;
+}
+
+fieldset{
+  padding:0;
+  border: none;
+  margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+textarea {
+    @include rem(font-size, 18px);
+    @include rem(line-height, 24px);
+    margin-bottom: .5em;
+    color: $black;
+    padding:.1em .3em;
+    border: none;
+    outline: 0;
+    background-color: $white;
+    border-bottom: 1px solid $black;
+    @include placeholder(#b0b0b0);
+
+    &:disabled, &[disabled]{
+    	color: $grey;
+    	border-bottom: 1px solid $grey;
+    }
+
+    &.input--boxed{
+      border: 1px solid ;
+    }
+}
+
+
+// custom labels styling for checkboxes/radios
+// we specify :checked to support < IE9 
+
+/* Base for label styling */
+
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked,
+input[type="radio"]:not(:checked),
+input[type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type="checkbox"]:not(:checked) + label,
+input[type="checkbox"]:checked + label,
+input[type="radio"]:not(:checked) + label,
+input[type="radio"]:checked + label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  line-height: 33px;
+  margin-bottom: 5px;
+  @include rem(font-size, 12px);
+  @include rem(line-height, 15px);
+}
+
+/* checkbox / radios aspect */
+
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:not(:checked) + label:before,
+input[type="radio"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0;
+  top: -1px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid $black;
+  background: none;
+}
+
+input[type="radio"] + label:before{
+  border-radius: 50%;
+}
+
+/* checked mark aspect */
+
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="checkbox"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:after,
+input[type="radio"]:checked + label:after {
+  // font-family: 'icons';
+  // content : '\e600' ;
+  content: "✓";
+  position: absolute;
+  top: -3px;
+  left: -1px;
+  font-size: 28px;
+  color: $black;
+  transition: all .2s;
+}
+input[type="radio"]:not(:checked) + label:after,
+input[type="radio"]:checked + label:after {
+  content: '•';
+  font-size: 36px;
+  left: -3px;
+}
+
+/* checked mark aspect changes */
+
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+input[type="checkbox"]:checked + label:after,
+input[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+
+input[type="checkbox"]:disabled:not(:checked) + label:before,
+input[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+input[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+input[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+
+/* accessibility */
+
+input[type="checkbox"]:checked:focus + label:before,
+input[type="checkbox"]:not(:checked):focus + label:before {
+  //border: 1px solid #ddd;
+}
+
+/* disabled radio */
+
+input[type="radio"]:disabled:not(:checked) + label:before,
+input[type="radio"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+input[type="radio"]:disabled:checked + label:after {
+  color: #999;
+}
+input[type="radio"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+
+input[type="radio"]:checked:focus + label,
+input[type="radio"]:not(:checked):focus + label {
+  //border: 1px solid #ddd;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  padding: .5em .8em;
+  border: 1px solid ;
+  font-weight: bold;
+  &:focus{
+    outline: 1px solid; // fix chrome blue glow
+  }
+}

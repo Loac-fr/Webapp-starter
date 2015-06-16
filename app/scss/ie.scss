@@ -1,0 +1,21 @@
+// @see http://jakearchibald.github.com/sass-ie/
+$old-ie: true;
+$fix-mqs: 65em;
+$mq-responsive: false;
+// @import "mq";
+/* 
+ * @example scss
+ * .element { @include mq($from: mobile) {
+        color: green;
+    }
+    @include mq($from: tablet) {
+        color: blue;
+    }
+    @include mq($to: desktop) {
+        color: red;
+    }
+}
+ */
+
+// import global styles
+// @import 'styles';

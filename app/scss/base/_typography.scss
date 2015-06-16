@@ -1,0 +1,116 @@
+// ==========================================================================
+// $FONT-FACE
+// ==========================================================================
+
+@if variable-exists(google-fonts-url) {
+  @import url($google-fonts-url);
+}
+
+// ********** uncomment these lines to **********
+// ********** import your custom font **********
+
+/* @font-face {
+  font-family: 'avg';
+  src:url('../fonts/ITCAvantGardeStd-Bk_gdi.eot?#iefixnueuf') format('embedded-opentype'),
+    url('../fonts/ITCAvantGardeStd-Bk_gdi.woff?nueuf') format('woff'),
+    url('../fonts/ITCAvantGardeStd-Bk_gdi.ttf?nueuf') format('truetype'),
+    url('../fonts/ITCAvantGardeStd-Bk_gdi.svg?nueuf#colors-icons') format('svg');
+
+  font-weight: normal;
+  font-style: normal;
+} */
+
+
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+  font-family: $sans-serif;
+}
+
+body { 
+  font-size: 1.4rem; /* =14px */
+
+  /*=========== Better Font Rendering =========== */
+  // comment or not depending on the font used
+
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  } 
+
+/* ===========================
+            Headings
+ =========================== */
+
+h1, h2, h3, h4, h5, h6 {
+  // ...
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  margin: 0 auto .5em;
+  font-weight: bold;
+}
+
+// h1 : ...
+
+h1, .h1 { 
+  @include rem(font-size, 48px);
+  @include rem(line-height, 52px);
+  @include mq($until: tablet){
+    @include rem(font-size, 32px);
+    @include rem(line-height, 36px);
+  }
+}
+
+// h2 : ...
+
+h2, .h2 {
+  @include rem(font-size, 32px);
+  @include rem(line-height, 38px);
+  // text-transform: none;
+}
+
+// h3 :  ...
+
+h3, .h3 {
+  @include rem(font-size, 18px);
+  @include rem(line-height, 24px);
+}
+
+// h4 : ...
+
+h4, .h4 {
+  @include rem(font-size, 14px);
+  @include rem(line-height, 20px);
+}
+
+h5, h6, .h5, .h6 {
+  //...
+}
+
+.light{
+  font-weight: normal;
+}
+
+/* ===========================
+            Links
+ =========================== */
+
+a {
+  color: inherit;
+  opacity: 1;
+  transition: opacity .2s ease-out, transform .2s ease-out;
+
+  &:hover{
+    opacity: .7;
+  }
+}
+
+/* ===========================
+            Paragraphs
+ =========================== */
+
+p {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 1em;
+}

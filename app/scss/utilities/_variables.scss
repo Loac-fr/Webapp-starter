@@ -1,0 +1,174 @@
+// ==========================================================================
+// = Global Variables
+// ==========================================================================
+
+/**
+ * CSS layout debugging
+ * @link http://pesticide.io/
+ * @type boolean
+ */
+
+$pesticide-debug              : false;
+
+/**
+ * Define width for browsers w/out media query support
+ * @link http://jakearchibald.github.com/sass-ie/
+ * @type boolean
+ */
+
+$fix-mqs                      : false !default;
+
+/**
+ * Turn on/off IE specific styles
+ * @link http://jakearchibald.github.com/sass-ie/
+ * @type boolean
+ */
+
+$old-ie                       : false !default;
+
+// Color Scheme
+// examples based on the official Sass styleguide
+// =============
+
+// colors
+$black                        : #000;
+$white												: #fff;
+$white-light									: #f1f1f1;
+$grey 												: #808080;
+$grey-light										: #e0e0e0;
+$green												: #88e3a4;
+$red													: #fb2e05;
+$orange												: #ff8a00;
+$dark-blue										: #4d607f;
+$yellow-light									: #fffebf;
+
+// Main color palette
+$color-primary                : $orange;
+$color-secondary              : $dark-blue;
+// $color-accent                 : $patina;
+$color-shadow                 : rgba($black, .125);
+$color-note                   : $grey;
+
+
+// Code
+$color-code                   : #333;
+$color-code-background        : #f3f3f3;
+$color-pre                    : #d4d4d4;
+$color-pre-background         : #333;
+
+// Selections
+$color-selection              : #b3d4fc;
+
+// Messages
+$color-message                : #f4ecbb;
+$color-success                : #2cde2c;
+$color-warning                : #cf8600;
+$color-important              : #d00;
+$color-notice                 : #66b;
+
+
+// Base Sizes
+// ==========
+
+/**
+ * Base font size in used in _mixins.scss
+ * @type number
+ */
+
+$base-font-size               : 16;
+
+/**
+ * Base line-height in used in _mixins.scss
+ * @type number
+ */
+
+$base-line-height             : 24;
+
+
+// Font Stacks
+// ===========
+
+/**
+ * (optional) URL for Google Fonts import in _typograhy.scss
+ * @type string
+ */
+
+$google-fonts-url          : "http://fonts.googleapis.com/css?family=Lato:400,900,400italic";
+
+/**
+ * (optional) names of webfonts imports
+ * @type array
+ */
+
+// $fonts                     : 'FONTNAME', 'FONTNAME', 'FONTNAME', 'FONTNAME';
+
+/**
+ * define font stack used for sans-serifs
+ * @type string
+ */
+
+$sans-serif             : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+/**
+ * define font stack used for serifs
+ * @type string
+ */
+
+$serif            : 'source-serif-pro', Georgia, 'Times New Roman', Times, serif;
+
+/**
+ * define font stack used for monospaced copy
+ * @type string
+ */
+
+$font-family-monospace        : 'source-code-pro','Inconsolata', "Menlo", Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+                                'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+                                Monaco, 'Courier New', Courier, monospace;
+
+/**
+ * define font stack used for headings
+ * @requires {variable} $font-family-serif
+ * @type string
+ */
+
+$font-family-display          : $sans-serif;
+
+/**
+ * define font stack used for paragraphs
+ * @requires {variable} font-family-sans
+ * @type string
+ */
+
+$font-family-default          : $serif;
+
+// Font Weights
+// ============
+
+$font-weight-light            : 300;
+$font-weight-normal           : 400;
+$font-weight-semibold         : 700;
+$font-weight-bold             : 900;
+
+/**
+ * define breakpoints
+ * @type number
+ */
+
+// Responsive breakpoints : see in mixins $mq-breakpoints
+
+// wrapper width container size
+
+$wrapper-width								: 1120px; 
+
+/**
+ * Define z-indexes for various elements
+ * @link http://www.sitepoint.com/using-sass-maps/
+ * @type number
+ */
+
+// z-index reference
+
+$z-back		: 1 	;
+$z-front	: 10	;
+$z-modal	: 20	;
+$z-top		: 100 ;

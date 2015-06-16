@@ -1,0 +1,21 @@
+{
+  "name": "Webapp-Starter",
+  "version": "0.1.0",
+  "authors": [
+    "Et Si"
+  ],
+  "description": "cncc quiz",
+  "main": "dist",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

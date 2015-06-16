@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+// SMACSS Your Sass Up by Mina Markham
+// A SMACSS-based starter toolkit for SCSS projects
+//
+// The toolkit uses recommendations from and Scalable and Modular Architecture for CSS (SMACSS) http://smacss.com/book
+// with optional support for Bourbon, Susy, Compass
+// Additional modifications following Sass Guidelines by Hugo Giraudel http://sass-guidelin.es/#the-7-1-pattern
+
+// Site:    https://github.com/minamarkham/sassy-starter
+// Author:  Mina Markham
+// Email:   mina@mina.codes
+// Date:    07/15/14
+
+// Contents:
+
+// 01. Libraries
+// 02. Utilities ( Variables, Functions, Mixins, etc... )
+// 03. Base ( regular elements, normalize, typography )
+// 04. Layout ( layout template, grid structure )
+// 05. Modules ( modules, background, colors, typography.. )
+// 06. States
+// 07. Print
+// 08. Shame
+
+
+
+// Vendors / Libs
+// @source http://sass-guidelin.es/#the-7-1-pattern
+//
+// Utilities
+//
+// Variables, Mixins, Functions and helpers classes/placeholders go here
+
+// @import vendors/bootstrap.css
+// @import 'utils/lib/pesticide';
+@import 'utilities/lib/jeet/index';
+
+
+@import 'utilities/variables';
+@import 'utilities/functions';
+@import 'utilities/mixins';
+@import 'utilities/helpers';
+@import 'utilities/print';
+
+@import 'utilities/lib/sweetalert'; // here as it uses variables
+
+// @source http://smacss.com/book/type-base
+//
+// Base Rules
+//
+// A Base rule is applied to an element using an element selector, a
+// descendent selector, or a child selector, along with any pseudo-classes.
+// It doesn’t include any class or ID selectors. It is defining the default
+// styling for how that element should look in all occurrences on the page.
+
+@import 'base/normalize';
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+
+// @source http://smacss.com/book/type-layout
+//
+// Layout Rules
+//
+// Layout styles can also be divided into major and minor styles based on
+// reuse. Major layout styles such as header and footer are traditionally
+// styled using ID selectors but take the time to think about the elements
+// that are common across all components of the page and use class selectors
+// where appropriate.
+
+@import 'layout/main';
+@import 'layout/nav';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+
+// @source http://smacss.com/book/type-module
+//
+// Module/Components Rules
+//
+// As briefly mentioned in the previous section, a Module is a more discrete
+// component of the page. It is your navigation bars and your carousels and
+// your dialogs and your widgets and so on. This is the meat of the page.
+// Modules sit inside Layout components. Modules can sometimes sit within
+// other Modules, too. Each Module should be designed to exist as a standalone
+// component. In doing so, the page will be more flexible. If done right,
+// Modules can easily be moved to different parts of the layout without
+// breaking.
+//
+// When defining the rule set for a module, avoid using IDs and element
+// selectors, sticking only to class names. A module will likely contain a
+// number of elements and there is likely to be a desire to use descendent
+// or child selectors to target those elements.
+
+@import 'components/icons';
+@import 'components/forms';
+@import 'components/buttons';
+
+
+// @source http://sass-guidelin.es/#the-7-1-pattern
+//
+// Page specific rules
+//
+// If you have page-specific styles, it is better to put them in a pages/ folder,
+// in a file named after the page. 
+// For instance, it’s not uncommon to have very specific styles 
+// for the home page hence the need for a _home.scss file in pages/.
+
+@import 'pages/home';
+
+// @source http://smacss.com/book/type-theme
+//
+// Theme Rules
+//
+// Themes can affect any of the primary types. They can
+// override base styles like default link colours. They can change
+// module elements such as colours and borders. They can affect
+// layout with different arrangements. They can also alter how states look.
+// check out the theming mixin in utilities/_mixins.scss
+
+@import 'themes/default';
+
+// @source http://sass-guidelin.es/#shame-file
+//
+// Shame File
+//
+// all the CSS declarations, hacks and things we are not proud of
+
+@import 'shame';

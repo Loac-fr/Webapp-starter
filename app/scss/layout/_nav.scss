@@ -1,0 +1,23 @@
+// ==========================================================================
+// Layout / Navs
+// ==========================================================================
+
+// ====== gobal nav properties / breadcrumbs, menus... ======
+
+.nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+ 
+	li,	a {
+		@include inline-block(baseline);
+	}
+
+	a {
+		padding: .25em; // more usable for touch devices
+	}
+}
+
+.subnav {
+	
+}

@@ -1,0 +1,52 @@
+// ==========================================================================
+// Basic & Usefull css animations / transitions
+// Ressources : 
+// https://daneden.github.io/animate.css/
+// http://www.minimamente.com/example/magic_animations/ 
+// ==========================================================================
+
+.animated{
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+
+.animated-stagger{
+	$items  : 4 ;
+	$delay  : .1 ;
+	// loop adding animation-delay
+  @for $i from 1 to $items {
+    &:nth-of-type(#{$i+1}){
+      animation-delay: $delay * $i * 1s ;
+    }
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(400%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(.85, .85, .85);
+  }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}

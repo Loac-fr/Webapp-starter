@@ -1,0 +1,29 @@
+// ==========================================================================
+// Layout / Main styles 
+// ==========================================================================
+
+.l-constrained {
+	max-width: $wrapper-width;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+
+.app-wrapper{
+	width: 100%;
+	overflow: hidden;
+}
+
+// ***************** main content *****************
+
+.main-wrapper {
+	background-color: $white;
+	position: relative;
+}
+
+
+// ***************** misc *****************
+
+html.lt-ie9{
+	font-size: 100%;
+}
