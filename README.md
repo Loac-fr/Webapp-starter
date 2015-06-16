@@ -88,10 +88,10 @@ run grunt to compile & launch the server / watch task.
 run grunt prod to minify and uglify your code.
 
 ## TO DO
--> change the way the javascript is added
--> improve bower components links
--> refactor some stylesheets (layout/components)
--> make a yeoman generator / node package ?
+- change the way the javascript is added
+- improve bower components links
+- refactor some stylesheets (layout/components)
+- make a yeoman generator / node package ?
 
 ## Resources
 
