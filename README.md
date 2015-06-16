@@ -1,7 +1,7 @@
 # Sass-7-1 Webapp starter
 # 7-1 Architecture for your Sass [(not SASS)](http://sassnotsass.com) project.
 ### Using Sass, Grunt & Bower.
-**Originally forked from [Mina Markham Sassy Starter](http://minamarkham.github.io/sassy-starter/)**
+**Originally forked from [Mina Markham Sassy Starter](http://minamarkham.github.io/sassy-starter/)**  
 *v.0.5*
 
 A starter toolkit based on [Scalable and Modular Architecture for CSS](http://smacss.com/) (SMACSS) for [Sass](http://sass-lang.com/) (SCSS) projects.
@@ -13,7 +13,9 @@ Also added, a [php server](https://github.com/sindresorhus/grunt-php) if you nee
 Styles are broken down into the following groups: **Base, Layout, Components (Modules), Pages, Themes, Utilities**
 
 ## Documentation
+
 See [SassDoc](http://minamarkham.github.io/sassy-starter/docs).
+
 *note : the documentation has not been modified yet; it refers to the original project.*
 
 ## Quick start
@@ -84,7 +86,9 @@ scss/
 ```
 
 ## The Gruntfile
+
 run grunt to compile & launch the server / watch task.
+
 run grunt prod to minify and uglify your code.
 
 ## TO DO
