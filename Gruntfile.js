@@ -52,6 +52,12 @@ module.exports = function(grunt) {
         src : [ '*' ],
         dest : 'dist/img',
       },
+      fonts : {
+        expand : true,
+        cwd : 'app/fonts/',
+        src : [ '**/**' ],
+        dest : 'dist/fonts',
+      },
       plugins : {
         expand : true,
         cwd : 'bower_components/',
