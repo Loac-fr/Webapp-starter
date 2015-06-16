@@ -99,7 +99,6 @@ run grunt prod to minify and uglify your code.
 
 ## Resources
 
-
 - [Scalable and Modular Architecture for CSS](http://smacss.com/book) (<abbr title="Scalable and Modular Architecture for CSS">SMACSS</abbr>)
 - [Sass Guidelines](http://sass-guidelin.es/#the-7-1-pattern)
 - [Original Sassy Starter](https://github.com/minamarkham/sassy-starter)
