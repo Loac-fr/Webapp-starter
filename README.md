@@ -24,6 +24,16 @@ See [SassDoc](http://minamarkham.github.io/sassy-starter/docs).
 2. Install Sass 3.3 – `gem install sass`.
 3. Watch for changes - `sass --watch sass_dir:css_dir`.
 
+#### Recommandations :
+
+```
+
+bower install jquery --save
+bower install modernizr --save
+bower install html5shiv --save
+
+```
+
 ## Directory structure - for reference / adapt it to your needs :)
 
 ```

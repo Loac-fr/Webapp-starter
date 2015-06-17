@@ -4,7 +4,7 @@
   "authors": [
     "Et Si"
   ],
-  "description": "cncc quiz",
+  "description": "Webapp-Starter using Sass, Grunt & Bower",
   "main": "dist",
   "license": "MIT",
   "ignore": [
