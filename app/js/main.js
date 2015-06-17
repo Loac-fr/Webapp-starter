@@ -1,18 +1,20 @@
-$(document).ready(function(){
+// ********** init **********
 
-	// ********** init **********
+console.log('hello !');
 
-	console.log('hello !');
+// ********** events **********
 
-	// ********** events **********
 
-	
 
-	// ********** functions **********
+// ********** functions **********
 
-	
 
-});
+
+// ********** jQuery **********
+
+// $(document).ready(function(){
+// 	//...
+// });
 
 // ********** utilities **********
 
