@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       php : {
         expand : true,
         cwd : 'app/',
-        src : [ 'index.php' ],
+        src : [ '*.php', '*.html' ],
         dest : 'dist/',
       },
       img : {
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
       plugins : {
         expand : true,
         cwd : 'bower_components/',
-        src : [ ], // specify plugin files here
+        src : [ ],                                   // specify plugin files here
         dest : 'app/vendors',
       },
       shiv : {
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // configure sass --> grunt sass
+    // Compile Sass to css
 
     sass: {                                       // Task
       dev: {                                      // Target
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {                                  // Dictionary of files
-          'dist/css/styles.css'   : 'app/scss/main.scss',     // 'destination': 'source'
+          'dist/css/styles.css'   : 'app/scss/main.scss',     // 'destination' : 'source'
           'dist/css/ie.css'       : 'app/scss/ie.scss',
           'dist/css/themes/*.css' : 'app/scss/themes/*.scss'
         }
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {                                  // Dictionary of files
-          'dist/css/styles.css'   : 'app/scss/main.scss',     // 'destination': 'source'
+          'dist/css/styles.css'   : 'app/scss/main.scss',     // 'destination' : 'source'
           'dist/css/ie.css'       : 'app/scss/ie.scss',
           'dist/css/themes/*.css' : 'app/scss/themes/*.scss'
         }
@@ -111,9 +111,8 @@ module.exports = function(grunt) {
         // https://www.bountysource.com/issues/8084317-file-not-being-output // should be fixed
         browsers : [ 'last 4 versions', 'ie 8', 'ie 9',
             'android 2.3', 'android 4', 'opera 12' ],
-        map : false,
-        remove : false
-      // we should remove this in prod
+        map : false
+        // remove : false
       },
       files : {
         // Target-specific file lists and/or options go here.
@@ -121,11 +120,11 @@ module.exports = function(grunt) {
       }
     },
 
-    // configure concatenation --> grunt concat
+    // Concatenate our js files
 
     concat : {
       main : {
-        src : [ 'app/js/main.js' ], // All JS in the vendor folder
+        src : [ 'app/js/*.js' ], // All JS in the js folder
         dest : 'dist/scripts/main.js'
       },
       dist : {
@@ -134,7 +133,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // configure minification --> grunt uglify
+    // Minify js : prod task
 
     uglify: {
       options: {
@@ -142,8 +141,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/scripts/plugins.js'  : 'app/js/plugins.js',
-          'dist/scripts/main.js'     : 'app/js/main.js'
+          'dist/scripts/plugins.js'  : 'dist/scripts/plugins.js',
+          'dist/scripts/main.js'     : 'dist/scripts/main.js'
         }
       }
     },
@@ -172,7 +171,7 @@ module.exports = function(grunt) {
     },
 
 
-   //configure file watching --> grunt watch
+   // configure file watching --> grunt watch
 
     watch: {
       scripts: {
@@ -192,7 +191,7 @@ module.exports = function(grunt) {
         }
       },
       php: {
-        files: ['app/*.php'],
+        files: ['app/*.php', 'app/*.html'],
         tasks: ['copy:php'],
         options: {
             spawn: false,
@@ -236,7 +235,7 @@ module.exports = function(grunt) {
   grunt.registerTask( 'build', [ 'imagemin','sass:prod', 'autoprefixer' ] ); // optimize images, compress css
   grunt.registerTask( 'default', [ 'clean', 'copy', 'sass:dev', 'concat', 'autoprefixer', 'php:dist', 'watch', 'notify' ]);
   // prod task -> add imagemin ?
-  grunt.registerTask( 'prod', [ 'clean', 'copy', 'sass:prod', 'concat', 'autoprefixer', 'uglify', 'notify:prod' ]);
+  grunt.registerTask( 'prod', [ 'clean', 'copy', 'sass:prod', 'autoprefixer', 'concat', 'uglify', 'notify:prod' ]);
 
 };
 

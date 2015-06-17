@@ -1,7 +1,7 @@
 {
-  "name": "cncc-quiz",
-  "title": "Quiz CNCC",
-  "description": "project cncc quiz 1",
+  "name": "webapp-starter",
+  "title": "Webapp Starter",
+  "description": "Scaffold app using Sass, Grunt & Bower",
   "author": {
     "name": "Et Si",
     "url": "https://etsicommunication.fr"
@@ -9,7 +9,7 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/loacfr/sass-7-1.git"
+    "url": "git://github.com/Loac-fr/Webapp-starter.git"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
