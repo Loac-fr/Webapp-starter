@@ -55,7 +55,7 @@
   <!-- Modernizer, cause some browsers suck -->
   <!-- <script src="js/libs/modernizr.js"></script> -->
 
-  <!--[if lt IE 10]><!--> <script src="scripts/html5shiv.min.js"></script> <!--<![endif]-->
+  <!--[if lt IE 10]> <script src="scripts/html5shiv.min.js"></script> <![endif]-->
 
 
 </head>
