@@ -105,18 +105,26 @@ module.exports = function(grunt) {
 
     // autoprefix css
 
-    autoprefixer : {
-      options : {
-        // specifying browser cause it to fail :
-        // https://www.bountysource.com/issues/8084317-file-not-being-output // should be fixed
-        browsers : [ 'last 4 versions', 'ie 8', 'ie 9',
-            'android 2.3', 'android 4', 'opera 12' ],
-        map : false
-        // remove : false
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer-core')({browsers: ['last 1 version']}),
+        ]
       },
-      files : {
-        // Target-specific file lists and/or options go here.
-        src : 'dist/css/*.css'
+      dist: {
+        src: 'dist/css/*.css'
+      },
+      prod : {
+        options: {
+          map: false,
+          processors: [
+            require('autoprefixer-core')({browsers: ['last 4 versions', 'ie 8', 'ie 9', 'android 4', 'opera 12']}),
+            require('cssnano')()
+          ]
+        },
+         src: 'dist/css/*.css'
+         //dest: 'dist/css/*.css'
       }
     },
 
@@ -232,10 +240,10 @@ module.exports = function(grunt) {
 
   // TASKS =====================================/
 
-  grunt.registerTask( 'build', [ 'imagemin','sass:prod', 'autoprefixer' ] ); // optimize images, compress css
-  grunt.registerTask( 'default', [ 'clean', 'copy', 'sass:dev', 'concat', 'autoprefixer', 'php:dist', 'watch', 'notify' ]);
+  grunt.registerTask( 'build', [ 'imagemin','sass:prod', 'postcss:dist' ] ); // optimize images, compress css
+  grunt.registerTask( 'default', [ 'clean', 'copy', 'sass:dev', 'concat', 'postcss:dist', 'php:dist', 'watch', 'notify' ]);
   // prod task -> add imagemin ?
-  grunt.registerTask( 'prod', [ 'clean', 'copy', 'sass:prod', 'autoprefixer', 'concat', 'uglify', 'notify:prod' ]);
+  grunt.registerTask( 'prod', [ 'clean', 'copy', 'sass:prod', 'postcss:prod', 'concat', 'uglify', 'notify:prod' ]);
 
 };
 
