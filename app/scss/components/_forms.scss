@@ -3,7 +3,8 @@
 // ==========================================================================
 
 input, label {
-	@include inline-block(baseline);
+	// @include inline-block(baseline);
+  display: block;
 	letter-spacing: .02em;
 }
 
@@ -19,7 +20,7 @@ input[type="password"],
 input[type="date"],
 input[type="search"],
 textarea {
-    @include rem(font-size, 18px);
+    // @include rem(font-size, 18px);
     @include rem(line-height, 24px);
     margin-bottom: .5em;
     color: $black;
@@ -30,6 +31,8 @@ textarea {
     border-bottom: 1px solid $black;
     @include placeholder(#b0b0b0);
 
+    transition: border-color .3s ease;
+
     &:disabled, &[disabled]{
     	color: $grey;
     	border-bottom: 1px solid $grey;
@@ -38,11 +41,36 @@ textarea {
     &.input--boxed{
       border: 1px solid ;
     }
+    &:focus{
+      border-color: $grey;
+    }
+}
+
+textarea{
+  resize: none;
+  width: 100%;
+  padding:1em;
+  background-color: $grey-light;
+}
+
+select{
+  position: relative;
+  -webkit-appearance: none;
+  appearance:none;
+  background-color: $grey;
+  font-size: 16px;
+  padding: .3em .5em;
+  color: $yellow;
+  border-radius:0;
+  border:none;
+  background-image: url(../img/assets/carret.png);
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 
 // custom labels styling for checkboxes/radios
-// we specify :checked to support < IE9 
+// specify :checked to support < IE9 
 
 /* Base for label styling */
 
@@ -51,7 +79,11 @@ input[type="checkbox"]:checked,
 input[type="radio"]:not(:checked),
 input[type="radio"]:checked {
   position: absolute;
-  left: -9999px;
+  // left: -9999px;
+  // test new solution to display browser required error message
+  left: 2px; // to adjust
+  opacity: 0;
+  z-index: -1;
 }
 
 input[type="checkbox"]:not(:checked) + label,
@@ -166,14 +198,46 @@ input[type="radio"]:not(:checked):focus + label {
   //border: 1px solid #ddd;
 }
 
+
+// validation checkbox / radios
+
+input[type="checkbox"]:not(:checked):focus:invalid + label:before,
+input[type="radio"]:not(:checked):focus:invalid + label:before{
+  border-color: $red;
+}
+
+
+
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   padding: .5em .8em;
   border: 1px solid ;
-  font-weight: bold;
+  // font-weight: bold;
   &:focus{
     outline: 1px solid; // fix chrome blue glow
   }
+}
+
+// *** taken from Corpus CSS ***
+
+.input[required]{
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 8 16 16" enable-background="new 0 8 16 16"><style type="text/css">.st0{fill:#F18260;}</style><path class="st0" d="M7.2 17.4l-5.4 3.8-1.4-2.5 6-2.7-6.1-2.8 1.4-2.4 5.4 3.8-.5-6.6h2.7l-.5 6.6 5.4-3.8 1.4 2.4-6 2.8 6.1 2.8-1.4 2.5-5.4-3.8.5 6.5h-2.8l.6-6.6z"/></svg>');
+}
+.input:invalid, .input:valid {
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: right 1rem center;
+}
+.input[required], .input:invalid, .input:valid {
+    padding-right: 2.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.input[required]:focus:invalid{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle fill="#CF5340" cx="8" cy="8" r="8"/></svg>');
+}
+.input[required]:valid{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle fill="#B4D388" cx="8" cy="8" r="8"/></svg>');
 }

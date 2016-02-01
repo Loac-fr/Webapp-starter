@@ -192,7 +192,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['app/scss/**/*.scss'],
-        tasks: ['sass:dev', 'autoprefixer', 'notify:sass'],
+        tasks: ['sass:dev', 'postcss:dist', 'notify:sass'],
         options: {
             spawn: false,
             livereload: true

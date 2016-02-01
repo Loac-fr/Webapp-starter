@@ -3,5 +3,29 @@
 // ==========================================================================
 
 .main-footer{
-	
+	padding: 3em 0;
+}
+
+@include mq($from:tablet){
+	.footer-col{
+		float: left;
+		& + .footer-col{
+			margin-left: 3em;
+		}
+	}
+}
+
+.footer-item{
+	margin-bottom: 1em;
+}
+
+//**** fixed bottom hack ****
+
+.app-wrapper{
+	min-height: 100vh;
+	display: table;
+
+	.fixed-bottom{
+		display: table-footer-group;
+	}
 }

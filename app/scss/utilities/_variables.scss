@@ -30,17 +30,18 @@ $old-ie                       : false !default;
 // examples based on the official Sass styleguide
 // =============
 
-// colors
 $black                        : #000;
 $white												: #fff;
 $white-light									: #f1f1f1;
 $grey 												: #808080;
 $grey-light										: #e0e0e0;
+// primary colors
 $green												: #88e3a4;
-$red													: #fb2e05;
-$orange												: #ff8a00;
-$dark-blue										: #4d607f;
-$yellow-light									: #fffebf;
+$red													: #FF0033;
+$blue 												: #0D63A5;
+$orange												: #FA360A;
+$yellow 											: #FFD717;
+$dark-blue										: #001F3F;
 
 // Main color palette
 $color-primary                : $orange;
@@ -59,13 +60,6 @@ $color-pre-background         : #333;
 // Selections
 $color-selection              : #b3d4fc;
 
-// Messages
-$color-message                : #f4ecbb;
-$color-success                : #2cde2c;
-$color-warning                : #cf8600;
-$color-important              : #d00;
-$color-notice                 : #66b;
-
 
 // Base Sizes
 // ==========
@@ -75,14 +69,14 @@ $color-notice                 : #66b;
  * @type number
  */
 
-$base-font-size               : 16;
+$base-font-size               : 14;
 
 /**
  * Base line-height in used in _mixins.scss
  * @type number
  */
 
-$base-line-height             : 24;
+$base-line-height             : 20;
 
 
 // Font Stacks
@@ -158,7 +152,9 @@ $font-weight-bold             : 900;
 
 // wrapper width container size
 
-$wrapper-width								: 1120px; 
+$wrapper-width								: 1120px;
+$space												: 30px;
+$space-fluid									: 3%;
 
 /**
  * Define z-indexes for various elements

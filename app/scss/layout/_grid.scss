@@ -15,6 +15,7 @@ $jeet-gutter: 2.4 ;
 .col-1-5 { @include col(1/5, $gutter: 0); }
 .col-2-5 { @include col(2/5, $gutter: 0); }
 .col-3-5 { @include col(3/5, $gutter: 0); }
+.col-1-6 { @include col(1/6, $gutter: 0); }
 
 // with gutters
 
@@ -37,8 +38,8 @@ $jeet-gutter: 2.4 ;
 
 //same for stacking on tablet
 
-[class*="col-"].stack--medium,
-.stack--medium { 
+[class*="col-"].stack-medium,
+.stack-medium { 
     @include mq($until: tablet) {
         @include stack();
     }

@@ -111,6 +111,7 @@
 .bg-white   { background-color: $white; }
 .bg-grey    { background-color: $grey-light; }
 .bg-black   { background-color: $black; }
+.bg-red     { background-color: $red; }
 
 // ================== Text helpers =============
 
@@ -125,4 +126,49 @@
   top: 50%;
   transform: translateY(-50%);
   display: block;
+}
+
+.no-scroll {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pd-1{
+  padding: 1rem;
+}
+
+.mt-1{
+  margin-top: 1rem;
+}
+
+.m1{
+  margin: 1rem auto;
+}
+
+// ================== other ==================
+
+
+
+.list-h-equal{
+  font-size: 0;
+  text-align: center;
+  .list-item{
+    font-size: 1.4rem;
+    a{
+      padding: 1em ;
+      @include inline-block(middle);
+      width: 100%;
+    }
+  }
+  &--6{
+    .list-item {
+      width: (100/6)*1%
+    }
+  }
+   &--5{
+    .list-item {
+      width: (100/5)*1%
+    }
+  }
 }

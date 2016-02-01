@@ -1,6 +1,8 @@
 // ********** init **********
 
 console.log('hello !');
+var wWidth = $(window).width(),
+		mobile = 768 ;
 
 // ********** events **********
 
@@ -12,9 +14,33 @@ console.log('hello !');
 
 // ********** jQuery **********
 
-// $(document).ready(function(){
-// 	//...
-// });
+$(document).ready(function(){
+
+	console.log('jQuery doc ready');
+
+	// ********** Mobile Navs interaction **********
+
+	// var caching
+	var $header				= $('.main-header'),
+			$toggle 			= $header.find('.mobile-nav-toggle').add('.mobile-nav-toggle--close'),
+			$mainNav			= $header.find('.main-nav'),
+			$sideNav			= $('#content').find('.sidenav-wrapper');
+
+	// events
+
+	$toggle.on('click', function(e){
+
+		$toggle.toggleClass('on');
+		$mainNav.toggleClass('is-open');
+		$('body').toggleClass('no-scroll nav-open');
+
+		if($sideNav.length > 0){
+			$sideNav.toggleClass('is-open') ;
+		} 
+		
+	});
+
+});
 
 // ********** utilities **********
 

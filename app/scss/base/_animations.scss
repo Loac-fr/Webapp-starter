@@ -21,6 +21,28 @@
   }
 }
 
+//================ easings ================
+
+$ease : cubic-bezier(0.645,.045,.095,1.08);
+
+//================ keyframes ================
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: translateY(0); }}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-1.5rem); }
+  to { opacity: 1; transform: translateY(0); }}
+
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -47,6 +69,10 @@
   }
 }
 
-.zoomIn {
-  animation-name: zoomIn;
-}
+.zoomIn       { animation-name: zoomIn; }
+
+.fadeIn       { animation: fadeIn 500ms; }
+.fadeOut      { animation: fadeOut 500ms; }
+
+.fadeInUp     { animation: fadeInUp 500ms; }
+.fadeInDown   { animation: fadeInDown 500ms; }

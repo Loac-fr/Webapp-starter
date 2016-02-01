@@ -25,3 +25,13 @@ figure{
 		height: auto;
 	}
 }
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	&.list{
+		list-style: disc ;
+		padding: 1em;
+	}
+}
